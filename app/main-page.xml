@@ -1,0 +1,18 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:lv="nativescript-ui-listview" navigatingTo="navigatingTo" class="page">
+    <Page.actionBar>
+        <ActionBar title="{{ sourceItems.length, sourceItems.length+ ' left' }}" icon="" class="action-bar">
+        </ActionBar>
+    </Page.actionBar>
+    <DockLayout stretchLastChild="true">
+        <lv:RadListView dock="bottom" loadOnDemandMode="Auto" loadMoreDataRequested="{{ onLoadMoreItemsRequested }}" items="{{ dataItems }}">
+            <lv:RadListView.listViewLayout>
+                <lv:ListViewLinearLayout scrollDirection="Vertical" ios:itemHeight="20" />
+            </lv:RadListView.listViewLayout>
+            <lv:RadListView.itemTemplate>
+                <StackLayout orientation="vertical">
+                    <Label fontSize="20" text="{{ name }}"/>
+                </StackLayout>
+            </lv:RadListView.itemTemplate>
+        </lv:RadListView>
+    </DockLayout>
+</Page>
